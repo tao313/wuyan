@@ -1,0 +1,12 @@
+#!name=无感刷卡助手解锁
+#!desc=解锁无感刷卡助手授权
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/37/18/45/3718452a-5987-5288-a08f-88decaffc57c/AppIcon-1x_U007epad-0-11-0-85-220-0.png/512x512bb.jpg
+#!author=seagull
+#!homepage=https://i.tlq520.cn
+
+[Script]
+http-request ^https?:\/\/i\.tlq520\.cn\/ultra\/api\/v1\/device\/register script-path=https://raw.githubusercontent.com/tao313/wuyan/main/unlock.js, requires-body=true, timeout=15, tag=无感刷卡助手激活
+http-response ^https?:\/\/i\.tlq520\.cn\/(ultra\/api\/v1\/app\/record\/device|geofence\/api\/subscription\/device-authorization|geofence\/api\/subscriber\/my-subscriptions) script-path=https://raw.githubusercontent.com/tao313/wuyan/main/unlock.js, requires-body=true, timeout=15, tag=无感刷卡助手解锁
+
+[MITM]
+hostname = i.tlq520.cn, ultra.tlq520.cn, *.tlq520.cn
